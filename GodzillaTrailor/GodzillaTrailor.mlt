@@ -62,6 +62,20 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">c08081a48425e74b6bb2f21ba7ce4df3</property>
   </producer>
+  <producer id="producer4" title="Anonymous Submission" in="00:00:00.000" out="00:02:58.533">
+    <property name="length">10713</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/lange/MrLange/ShotCut/GodzillaTrailor/Audio/bensound-epic.mp3</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="creation_time">2020-01-04T21:00:48</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">915e55f3f4ef18f42e55d6b3690dcf4f</property>
+  </producer>
   <playlist id="main_bin" title="Shotcut version 19.12.31">
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">1</property>
@@ -70,9 +84,10 @@
     <entry producer="producer1" in="00:00:00.000" out="00:00:06.983"/>
     <entry producer="producer2" in="00:00:00.000" out="00:00:07.983"/>
     <entry producer="producer3" in="00:00:00.000" out="00:05:13.467"/>
+    <entry producer="producer4" in="00:00:00.000" out="00:02:58.533"/>
   </playlist>
-  <producer id="black" in="00:00:00.000" out="00:05:12.867">
-    <property name="length">00:05:12.883</property>
+  <producer id="black" in="00:00:00.000" out="00:03:04.533">
+    <property name="length">00:03:04.550</property>
     <property name="eof">pause</property>
     <property name="resource">0</property>
     <property name="aspect_ratio">1</property>
@@ -81,9 +96,9 @@
     <property name="set.test_audio">0</property>
   </producer>
   <playlist id="background">
-    <entry producer="black" in="00:00:00.000" out="00:05:12.867"/>
+    <entry producer="black" in="00:00:00.000" out="00:03:04.533"/>
   </playlist>
-  <producer id="producer4" title="Anonymous Submission" in="00:00:00.000" out="00:00:06.983">
+  <producer id="producer5" title="Anonymous Submission" in="00:00:00.000" out="00:00:06.983">
     <property name="length">420</property>
     <property name="eof">pause</property>
     <property name="resource">/home/lange/MrLange/ShotCut/GodzillaTrailor/Video to Edit/Plane Crash.MOV</property>
@@ -98,8 +113,16 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">6172849eab840bb9d5f1cb07a7a482c3</property>
     <property name="shotcut:caption">Plane Crash.MOV</property>
+    <filter id="filter0" in="00:00:01.000" out="00:00:06.983">
+      <property name="start">1</property>
+      <property name="level">00:00:04.000=1;00:00:05.983=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">00:00:02.000</property>
+    </filter>
   </producer>
-  <producer id="producer5" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.983">
+  <producer id="producer6" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.983">
     <property name="length">00:00:19.000</property>
     <property name="eof">pause</property>
     <property name="resource">/home/lange/MrLange/ShotCut/GodzillaTrailor/Video to Edit/Outdoor Running Scene.MOV</property>
@@ -116,13 +139,58 @@
     <property name="xml">was here</property>
     <property name="shotcut:caption">Outdoor Running Scene.MOV</property>
   </producer>
+  <producer id="producer7" title="Anonymous Submission" in="00:00:00.000" out="00:00:07.983">
+    <property name="length">480</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/lange/MrLange/ShotCut/GodzillaTrailor/Video to Edit/Saving Wife Run.MOV</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2018-02-09T06:16:10</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">4059f0ae18bead3ac224c6e11f7d6c3d</property>
+    <property name="shotcut:caption">Saving Wife Run.MOV</property>
+    <filter id="filter1" in="00:00:02.600" out="00:00:07.983">
+      <property name="start">1</property>
+      <property name="level">1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeInBrightness</property>
+      <property name="alpha">00:00:00.000=0;00:00:00.983=1</property>
+      <property name="shotcut:animIn">00:00:01.000</property>
+    </filter>
+  </producer>
+  <tractor id="tractor0" title="Anonymous Submission" global_feed="1" in="00:00:00.000" out="00:00:00.500">
+    <property name="shotcut:transition">lumaMix</property>
+    <track producer="producer6" in="00:00:05.817" out="00:00:06.317"/>
+    <track producer="producer7" in="00:00:02.900" out="00:00:03.400"/>
+    <transition id="transition0" out="00:00:00.500">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+    </transition>
+    <transition id="transition1" out="00:00:00.500">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+  </tractor>
   <playlist id="playlist0">
     <property name="shotcut:video">1</property>
     <property name="shotcut:name">V1</property>
-    <entry producer="producer4" in="00:00:00.000" out="00:00:06.983"/>
-    <entry producer="producer5" in="00:00:00.000" out="00:00:06.833"/>
+    <entry producer="producer5" in="00:00:01.000" out="00:00:06.983"/>
+    <entry producer="producer6" in="00:00:00.000" out="00:00:05.800"/>
+    <entry producer="tractor0" in="00:00:00.000" out="00:00:00.500"/>
+    <entry producer="producer7" in="00:00:03.417" out="00:00:07.983"/>
   </playlist>
-  <producer id="producer6" title="Anonymous Submission" in="00:00:00.000" out="00:05:13.467">
+  <producer id="producer8" title="Anonymous Submission" in="00:00:00.000" out="00:05:13.467">
     <property name="length">18809</property>
     <property name="eof">pause</property>
     <property name="resource">/home/lange/MrLange/ShotCut/GodzillaTrailor/Audio/bensound-newdawn.mp3</property>
@@ -136,34 +204,59 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">c08081a48425e74b6bb2f21ba7ce4df3</property>
     <property name="shotcut:caption">bensound-newdawn.mp3</property>
+    <filter id="filter2" in="00:00:00.600" out="00:00:06.583">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:05.000=0;00:00:05.983=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">00:00:01.000</property>
+    </filter>
+  </producer>
+  <producer id="producer9" title="Anonymous Submission" in="00:00:00.000" out="00:02:58.533">
+    <property name="length">10713</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/lange/MrLange/ShotCut/GodzillaTrailor/Audio/bensound-epic.mp3</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="creation_time">2020-01-04T21:00:48</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">915e55f3f4ef18f42e55d6b3690dcf4f</property>
+    <property name="shotcut:caption">bensound-epic.mp3</property>
   </producer>
   <playlist id="playlist1">
     <property name="shotcut:audio">1</property>
     <property name="shotcut:name">A1</property>
-    <entry producer="producer6" in="00:00:00.600" out="00:05:13.467"/>
+    <entry producer="producer8" in="00:00:00.600" out="00:00:06.583"/>
+    <entry producer="producer9" in="00:00:00.000" out="00:02:58.533"/>
   </playlist>
-  <tractor id="tractor0" title="Shotcut version 19.12.31" global_feed="1" in="00:00:00.000" out="00:05:12.867">
+  <tractor id="tractor1" title="Shotcut version 19.12.31" global_feed="1" in="00:00:00.000" out="00:03:04.533">
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">1</property>
+    <property name="shotcut:scaleFactor">1.68456</property>
     <track producer="background"/>
     <track producer="playlist0" hide="audio"/>
     <track producer="playlist1" hide="video"/>
-    <transition id="transition0">
+    <transition id="transition2">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
       <property name="mlt_service">mix</property>
       <property name="always_active">1</property>
       <property name="sum">1</property>
     </transition>
-    <transition id="transition1">
+    <transition id="transition3">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
       <property name="version">0.9</property>
       <property name="mlt_service">frei0r.cairoblend</property>
       <property name="disable">1</property>
     </transition>
-    <transition id="transition2">
+    <transition id="transition4">
       <property name="a_track">0</property>
       <property name="b_track">2</property>
       <property name="mlt_service">mix</property>
